@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Product Maintenance</title>
+	<link rel="stylesheet" th:href="@{/styles.css}" />
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row" style="width: 100%;">
+			<center>
+				<div class="col-sm-12">
+					<h1>Products</h1>
+					<div class="products">
+						<form th:object="${music}" method="post">
+							<div th:if="${ not#lists.isEmpty(music)}">
+								<table class="table">
+									<thead>
+										<tr>
+											<th scope="col">Code</th>
+											<th scope="col">Description</th>
+											<th scope="col">Price</th>
+											<th scope="col"></th>
+											<th scope="col"></th>
+										</tr>
+									</thead>
+									<tr th:each="m : ${music}">
+										<td th:text="${m.id}"></td>
+										<td th:text="${m.des}"></td>
+										<td th:text="${m.price}"></td>
+										<td>
+											<a th:href="@{/edit/{id}(id= ${m.id})}">Edit</a>
+										</td>
+										<td>
+											<a th:href="@{/delete/{id}(id = ${m.id})}">Delete</a>
+										</td>
+									</tr>
+									<table>
+							</div>
+							<br>
+
+						</form>
+					</div>
+					<form method="POST">
+						<input type="submit" value="Add Product" />
+					</form>
+				</div>
+			</center>
+		</div>
+	</div>
+</body>
+
+</html>

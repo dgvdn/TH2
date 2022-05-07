@@ -1,0 +1,47 @@
+.container {
+    margin-top: 50px;
+}
+
+.row {
+    border: 1px darkgrey solid;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    border-radius: 5px;
+    color: black;
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+}
+
+button:hover {
+    /* đậm hơn khi đ chuột vào */
+    opacity: 1;
+}
+
+.inline {
+    display: inline-block;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+.addbtn {}
+
+.deletebtn {}
+
+.editbtn {}
+
+.updatebtn {}
+
+.viewbtn {}

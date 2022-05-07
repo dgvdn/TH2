@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Product Maintenance</title>
+	<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="row" style="width: 50%;">
+			<center>
+				<form method="post" th:object="${music}" th:action="@{/delete/{id}(id = ${music.id})}">
+					<div class="product">
+
+						<h1>Are you sure you wanna delete this product ?</h1>
+						<label for="id" lass="col-md-4 control-label">Code: </label>
+						<input type="text" th:field="*{id}" readonly class="form-control input-md" /><br />
+						<label for="des" lass="col-md-4 control-label">Description: </label>
+						<input type="text" th:field="*{des}" readonly class="form-control input-md" /><br />
+						<label for="price" lass="col-md-4 control-label">Price: </label>
+						<input type="text" th:field="*{price}" readonly class="form-control input-md" /><br />
+					</div>
+					<div class="inline">
+						<button type="submit">YES</button>
+						<button type="submit" th:formaction="@{/delete/no}">NO</button>
+					</div>
+				</form>
+			</center>
+		</div>
+	</div>
+</body>
+
+</html>

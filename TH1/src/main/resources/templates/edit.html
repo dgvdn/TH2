@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Product Maintenance</title>
+	<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+<div class="container">
+		<div class="row" style="width: 50%;">
+			<center>
+				<div class="col-sm-12">
+					<form method="post" th:object="${music}" th:action="@{/edit/{id}(id = ${music.id})}">
+						<h1>Product</h1>
+						<div class="product">
+							<label for="id" class="col-md-4 control-label">Code: </label>
+							<input type="text" th:field="*{id}" class="form-control input-md" /><br />
+							<label for="des" class="col-md-4 control-label">Description: </label>
+							<input type="text" th:field="*{des}" class="form-control input-md" /><br />
+							<label for="price" class="col-md-4 control-label">Price: </label>
+							<input type="text" th:field="*{price}" class="form-control input-md" /><br />
+						</div>
+						<div class="inline">
+							<button type="submit">Update Product</button>
+							<button type="submit" th:formaction="@{/edit/view}">View Products</button>
+						</div>
+					</form>
+				</div>
+			</center>
+		</div>
+	</div>
+</body>
+
+</html>
